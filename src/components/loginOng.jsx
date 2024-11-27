@@ -1,15 +1,43 @@
-function LoginOng(){
-    return(
-        <div className="flex justify-center">
-            <div className="bg-slate-300 rounded-md w-[500px] p-10">
+function LoginOng() {
+    return (
+        <div className="flex justify-center items-center min-h-screen bg-gray-100">
+            <div className="bg-white shadow-lg rounded-lg w-[500px] p-8">
+                <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login da ONG</h2>
                 <form>
-                    <div className="p-2 text-center">CNPJ: <input type="text" name="cnpj" /></div>
-                    <div className="p-2 pb-4 text-center">Senha: <input type="password" name="senha"/></div>
-                    <div className="text-center bg-lime-600 p-2 rounded-sm"><input type="submit" /></div>
+                    <div className="mb-4">
+                        <label htmlFor="cnpj" className="block text-gray-700 font-semibold mb-2">CNPJ</label>
+                        <input 
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            type="text" 
+                            name="cnpj" 
+                            id="cnpj"
+                            placeholder="Digite o CNPJ"
+                        />
+                    </div>
+
+                    <div className="mb-6">
+                        <label htmlFor="senha" className="block text-gray-700 font-semibold mb-2">Senha</label>
+                        <input 
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            type="password" 
+                            name="senha" 
+                            id="senha"
+                            placeholder="Digite a sua senha"
+                        />
+                    </div>
+
+                    <div className="text-center">
+                        <button 
+                            type="submit" 
+                            className="w-full py-3 bg-lime-600 text-white font-semibold rounded-lg hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-lime-400 transition"
+                        >
+                            Entrar
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
-    )
+    );
 }
 
-export default LoginOng
+export default LoginOng;

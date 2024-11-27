@@ -5,11 +5,12 @@ import Sobre from './pages/sobre';
 import Login from './pages/login';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
     path: "/sobre",

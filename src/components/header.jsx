@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import logo from "../img/logo.png"
 
 function Header () {
     const navegate = useNavigate();
@@ -12,10 +13,12 @@ function Header () {
 }
     return(
         <div className="bg-lime-600 pt-6 pb-6 flex">
-                <div className="text-2xl text-white pl-4 basis-9/12"><button onClick={home}>Konekta</button></div>
-                <div className="basis-1/12 border-r-2 text-center border-slate-800"><button>Cadastrar</button></div>
-                <div className="basis-1/12 border-r-2 text-center border-slate-800"><button onClick={login}>Login</button></div>
-                <div className="basis-1/12 text-center"><button onClick={sobreNos}>Sobre a gente</button></div>
+                <div className="flex items-center basis-9/12">
+                    <img className="text-2xl pl-4 cursor-pointer" onClick={home} src={logo} style={{width: "90px", height: "60px"}}></img>
+                </div>
+                <button onClick={sobreNos} className="px-6 mr-3 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">Cadastrar</button>
+                <button onClick={login} className="px-6 mr-3 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">Login</button>
+                <button onClick={sobreNos} className="px-6 mr-3 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">Sobre a gente</button>
         </div>
     )
 }
