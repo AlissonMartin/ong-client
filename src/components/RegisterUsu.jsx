@@ -1,9 +1,31 @@
-function LoginUsu() {
+function RegisterUsu() {
   return (
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="flex justify-center items-center bg-gray-100">
           <div className="bg-white shadow-lg rounded-lg w-[500px] p-8">
-              <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login de Usuário</h2>
+              <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Cadastro de Usuário</h2>
               <form>
+                    <div className="mb-4">
+                      <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">CPF</label>
+                      <input 
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                          type="text" 
+                          name="cpf" 
+                          id="cpf" 
+                          placeholder="Digite seu CPF"
+                      />
+                  </div>
+
+                  <div className="mb-4">
+                        <label htmlFor="cnpj" className="block text-gray-700 font-semibold mb-2">Nome</label>
+                        <input 
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            type="text" 
+                            name="name" 
+                            id="name"
+                            placeholder="Digite seu nome"
+                        />
+                    </div>
+
                   <div className="mb-4">
                       <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
                       <input 
@@ -40,4 +62,4 @@ function LoginUsu() {
   );
 }
 
-export default LoginUsu;
+export default RegisterUsu;
