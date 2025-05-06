@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from "./components/HeaderLog";
 import image from "./img/placeholder.png";
 
 function App (){
