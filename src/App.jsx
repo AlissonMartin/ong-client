@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from "./components/HeaderLog";
+import image from "./img/placeholder.png";
 
-function App() {
-  const [count, setCount] = useState(0)
+function App (){
+  return(
+  <div>
+    <Header />
+    <div className="flex flex-col items-center">
+  <div className="relative w-full h-[60vh]">
+    <img 
+      src={image} 
+      alt="Inspirational" 
+      className="absolute inset-0 w-full h-full object-cover" 
+    />
+    
+  </div>
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+  <div className=" inset-0 flex flex-col items-center justify-center bg-opacity-50 m-4">
+      <h1 className="text-4xl font-extrabold drop-shadow-md text-center">
+        Faça do mundo um lugar melhor
+      </h1>
+      <p className="mt-4 text-lg text-center max-w-2xl">
+        Junte-se a nós nessa missão para criar um impacto positivo no mundo por meio de ideias inovadoras e ações transformadoras.
       </p>
-    </>
+    </div>
+  
+</div>
+
+</div>
   )
 }
 
