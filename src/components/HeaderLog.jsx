@@ -3,7 +3,7 @@ import logo from "../img/logo.png"
 import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.css';
 
-function Header () {
+function HeaderLog () {
     const navegate = useNavigate();
         function home() {
             navegate('/')
@@ -33,4 +33,4 @@ function Header () {
     )
 }
 
-export default Header 
+export default HeaderLog 
