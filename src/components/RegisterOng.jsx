@@ -1,57 +1,57 @@
 function RegisterOng() {
     return (
-        <div className="flex justify-center items-center bg-gray-100">
-            <div className="bg-white shadow-lg rounded-lg w-[500px] p-8">
-                <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Cadastro de ONG</h2>
+        <div className="d-flex justify-content-center align-items-center bg-light vh-100">
+            <div className="bg-white shadow rounded p-4" style={{ width: '500px' }}>
+                <h2 className="h4 text-center text-dark mb-4">Cadastro de ONG</h2>
                 <form>
-                    <div className="mb-4">
-                        <label htmlFor="cnpj" className="block text-gray-700 font-semibold mb-2">CNPJ</label>
-                        <input 
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            type="text" 
-                            name="cnpj" 
+                    <div className="mb-3">
+                        <label htmlFor="cnpj" className="form-label fw-semibold">CNPJ</label>
+                        <input
+                            type="text"
+                            name="cnpj"
                             id="cnpj"
                             placeholder="Digite o CNPJ"
+                            className="form-control"
                         />
                     </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="cnpj" className="block text-gray-700 font-semibold mb-2">Nome</label>
-                        <input 
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            type="text" 
-                            name="name" 
+                    <div className="mb-3">
+                        <label htmlFor="name" className="form-label fw-semibold">Nome</label>
+                        <input
+                            type="text"
+                            name="name"
                             id="name"
                             placeholder="Digite o nome da ONG"
+                            className="form-control"
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label fw-semibold">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Digite seu Email"
+                            className="form-control"
                         />
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="cnpj" className="block text-gray-700 font-semibold mb-2">Email</label>
-                        <input 
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            type="email" 
-                            name="email" 
-                            id="email"
-                            placeholder="Digite seu Email"
-                        />
-                    </div>
-
-                    <div className="mb-6">
-                        <label htmlFor="senha" className="block text-gray-700 font-semibold mb-2">Senha</label>
-                        <input 
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            type="password" 
-                            name="senha" 
+                        <label htmlFor="senha" className="form-label fw-semibold">Senha</label>
+                        <input
+                            type="password"
+                            name="senha"
                             id="senha"
                             placeholder="Digite a sua senha"
+                            className="form-control"
                         />
                     </div>
 
                     <div className="text-center">
-                        <button 
-                            type="submit" 
-                            className="w-full py-3 bg-lime-600 text-white font-semibold rounded-lg hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-lime-400 transition"
+                        <button
+                            type="submit"
+                            className="btn btn-success w-100 fw-semibold"
                         >
                             Entrar
                         </button>

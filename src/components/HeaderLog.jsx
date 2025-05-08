@@ -1,36 +1,46 @@
-import { useNavigate } from "react-router-dom"
-import logo from "../img/logo.png"
+import { useNavigate } from "react-router-dom";
+import logo from "../img/logo.png";
 import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.css';
 
-function HeaderLog () {
-    const navegate = useNavigate();
-        function home() {
-            navegate('/')
+function HeaderLog() {
+    const navigate = useNavigate();
+
+    function home() {
+        navigate('/');
     }
 
-    return(
-        <div className="bg-lime-600 pt-6 pb-6 flex">
-                <div className="flex items-center basis-10/12">
-                    <img className="text-2xl pl-4 cursor-pointer" onClick={home} src={logo} style={{width: "90px", height: "60px"}}></img>
-                </div>
-                <div className="px-6 py-3 mr-3 text-white font-semibold">
-                Bem vindo, Usuario
-                </div>
-                <div className="flex items-center">
-                <Dropdown>
-                    <Dropdown.Toggle variant="outline-light" className="rounded-circle" id="dropdown-basic">
+    return (
+        <div className="bg-success py-3 d-flex align-items-center justify-content-between px-4">
+            <div className="d-flex align-items-center flex-grow-1">
+                <img 
+                    src={logo} 
+                    alt="Logo" 
+                    onClick={home} 
+                    className="cursor-pointer" 
+                    style={{ width: "90px", height: "60px", cursor: "pointer" }} 
+                />
+            </div>
+
+            <div className="text-white fw-semibold me-3">
+                Bem vindo, Usuário
+            </div>
+
+            <div>
+                <Dropdown align="end">
+                    <Dropdown.Toggle variant="light" className="rounded-circle border-0">
+                        <span className="visually-hidden">Menu</span>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Usuario</Dropdown.Item>
+                        <Dropdown.Item href="#/action-1">Usuário</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">Configuração</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Sair</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                </div>
+            </div>
         </div>
-    )
+    );
 }
 
-export default HeaderLog 
+export default HeaderLog;

@@ -5,10 +5,9 @@ import Sobre from './pages/Sobre';
 import Login from './pages/Login';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
-import Home from './pages/Home';
 import Cadastro from './pages/Cadastro';
-import EditUsu from './pages/EditUsu';
-import ShowUsu from './pages/ShowUsu';
+import EditUsu from './pages/user/EditUsu';
+import ShowUsu from './pages/user/ShowUsu';
 
 const router = createBrowserRouter([
   {
