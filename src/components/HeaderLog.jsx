@@ -13,22 +13,23 @@ function HeaderLog() {
     return (
         <div className="bg-success py-3 d-flex align-items-center justify-content-between px-4">
             <div className="d-flex align-items-center flex-grow-1">
-                <img 
-                    src={logo} 
-                    alt="Logo" 
-                    onClick={home} 
-                    className="cursor-pointer" 
-                    style={{ width: "90px", height: "60px", cursor: "pointer" }} 
+                <img
+                    src={logo}
+                    alt="Logo"
+                    onClick={home}
+                    className="cursor-pointer"
+                    style={{ width: "90px", height: "60px", cursor: "pointer" }}
                 />
             </div>
 
             <div className="text-white fw-semibold me-3">
-                Bem vindo, Usuário
+
             </div>
 
             <div>
                 <Dropdown align="end">
-                    <Dropdown.Toggle variant="light" className="rounded-circle border-0">
+                    <Dropdown.Toggle variant="light" className="btn-outline-success rounded-pill">
+                        Bem vindo, Usuário
                         <span className="visually-hidden">Menu</span>
                     </Dropdown.Toggle>
 

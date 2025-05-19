@@ -29,7 +29,7 @@ function Cadastro() {
         </div>
       </div>
 
-      <div className="d-flex justify-content-center mt-4">
+      <div className="d-flex justify-content-center mt-5">
         {isUser ? <RegisterUsu /> : <RegisterOng />}
       </div>
     </div>

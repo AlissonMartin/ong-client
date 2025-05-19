@@ -1,6 +1,12 @@
 import HeaderLog from "../../components/HeaderLog";
+import { useNavigate } from "react-router-dom";
 
 function ShowUsu() {
+  const navigate = useNavigate();
+
+  function editUsu() {
+    navigate('/editUsu');
+  }
   return (
     <div>
       <HeaderLog />
@@ -32,7 +38,7 @@ function ShowUsu() {
             </div>
 
             <div className="mt-4">
-              <button className="btn btn-success px-4 py-2">Editar Perfil</button>
+              <button onClick={editUsu} className="btn btn-success px-4 py-2">Editar Perfil</button>
             </div>
           </div>
         </div>

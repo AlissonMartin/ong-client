@@ -4,10 +4,12 @@ import App from './App';
 import Sobre from './pages/Sobre';
 import Login from './pages/Login';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './index.css'
+import './index.scss'
 import Cadastro from './pages/Cadastro';
 import EditUsu from './pages/user/EditUsu';
 import ShowUsu from './pages/user/ShowUsu';
+import EditOng from './pages/ong/EditOng';
+import ShowOng from './pages/ong/ShowOng';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "/showUsu",
     element: <ShowUsu />,
+  },
+  {
+    path: "/editOng",
+    element: <EditOng />,
+  },
+  {
+    path: "/showOng",
+    element: <ShowOng />,
   },
 ]);
 

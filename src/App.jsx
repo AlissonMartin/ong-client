@@ -6,15 +6,14 @@ function App() {
     <div>
       <Header />
       <div className="flex flex-col items-center">
-        <div className="relative w-full h-[60vh]">
+        <div className="container-fluid p-0">
           <img
             src={image}
             alt="Inspirational"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="img-fluid w-100"
+            style={{ height: '60vh', objectFit: 'cover' }}
           />
-
         </div>
-
         <div className=" inset-0 flex flex-col items-center justify-center bg-opacity-50 m-4">
           <h1 className="text-4xl font-extrabold drop-shadow-md text-center">
             Faça do mundo um lugar melhor

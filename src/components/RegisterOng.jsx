@@ -1,6 +1,6 @@
 function RegisterOng() {
     return (
-        <div className="d-flex justify-content-center align-items-center bg-light vh-100">
+        <div className="d-flex justify-content-center align-items-center bg-light vh-80">
             <div className="bg-white shadow rounded p-4" style={{ width: '500px' }}>
                 <h2 className="h4 text-center text-dark mb-4">Cadastro de ONG</h2>
                 <form>
