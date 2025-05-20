@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.scss'
 import Cadastro from './pages/Cadastro';
+import OngPage from './pages/OngPage';
 import EditUsu from './pages/user/EditUsu';
 import ShowUsu from './pages/user/ShowUsu';
 import EditOng from './pages/ong/EditOng';
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/showOng",
     element: <ShowOng />,
+  },
+  {
+    path: "/ongPage",
+    element: <OngPage />,
   },
 ]);
 
