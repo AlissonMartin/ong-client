@@ -9,6 +9,9 @@ function HeaderLog() {
     function home() {
         navigate('/');
     }
+    function listaConquistas() {
+        navigate('/listaConquistas');
+    }
 
     return (
         <div className="bg-success py-3 d-flex align-items-center justify-content-between px-4">
@@ -36,6 +39,7 @@ function HeaderLog() {
                     <Dropdown.Menu>
                         <Dropdown.Item href="#/action-1">Usuário</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">Configuração</Dropdown.Item>
+                        <Dropdown.Item onClick={listaConquistas}>Coquistas</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Sair</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>

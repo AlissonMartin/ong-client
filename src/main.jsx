@@ -11,6 +11,7 @@ import EditUsu from './pages/user/EditUsu';
 import ShowUsu from './pages/user/ShowUsu';
 import EditOng from './pages/ong/EditOng';
 import ShowOng from './pages/ong/ShowOng';
+import ListaConquistas from './pages/ListaConquistas';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/ongPage",
     element: <OngPage />,
+  },
+  {
+    path: "/listaConquistas",
+    element: <ListaConquistas />,
   },
 ]);
 
