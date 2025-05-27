@@ -12,6 +12,7 @@ import ShowUsu from './pages/user/ShowUsu';
 import EditOng from './pages/ong/EditOng';
 import ShowOng from './pages/ong/ShowOng';
 import ListaConquistas from './pages/ListaConquistas';
+import OngToUsu from './pages/ong/OngToUsu';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: "/listaConquistas",
     element: <ListaConquistas />,
+  },
+  {
+    path: "/ongToUsu",
+    element: <OngToUsu />,
   },
 ]);
 
