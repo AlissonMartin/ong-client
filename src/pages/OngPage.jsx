@@ -1,5 +1,6 @@
 import HeaderLog from "../components/HeaderLog";
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function OngPage() {
 
@@ -11,6 +12,8 @@ function OngPage() {
         e.preventDefault();
         onSearch({ keyword, category, distance });
     }
+
+    const navigate = useNavigate();
 
     return (
         <div>
@@ -68,7 +71,7 @@ function OngPage() {
                 </div>
             </form>
             <div class="container my-5">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm" onClick={() => navigate('/ongToUsu')} style={{ cursor: 'pointer' }}>
                     <div class="row g-0">
                         <div class="col-md-5">
                             <img src="https://placehold.co/300x200" alt="Ong" class="img-fluid rounded-start" />
