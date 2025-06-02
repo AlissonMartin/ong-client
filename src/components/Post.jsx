@@ -8,18 +8,20 @@ function Post() {
 
     return (
         <div className="container mt-4">
-            {posts.map(post => (
-                <div key={post.id} className="card mb-3">
-                    <div className="card-body">
-                        <p className="card-text">{post.texto}</p>
-                        <p className="card-text">
-                            <small className="text-muted">
-                                Publicado em: {new Date(post.data).toLocaleDateString()}
-                            </small>
-                        </p>
+            {[...posts] // Faz uma cópia do array
+                .sort((a, b) => new Date(b.data) - new Date(a.data)) // Ordena por data (mais recente primeiro)
+                .map(post => (
+                    <div key={post.id} className="card mb-3">
+                        <div className="card-body">
+                            <p className="card-text">{post.texto}</p>
+                            <p className="card-text">
+                                <small className="text-muted">
+                                    Publicado em: {new Date(post.data).toLocaleDateString()}
+                                </small>
+                            </p>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
         </div>
     );
 }
