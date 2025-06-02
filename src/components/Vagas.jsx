@@ -3,6 +3,7 @@ function Vagas() {
     return (
         <div className="container">
             <div className="row">
+                {/* anuncio de vaga criado a partir da div abaixo */}
                 <div className="col-4 pb-2">
                     <div class="card">
                         <div class="card-body">
