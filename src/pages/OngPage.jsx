@@ -17,7 +17,6 @@ function OngPage() {
 
     return (
         <div>
-            <HeaderLog />
             <div class="py-5"></div>
 
             <form className="container my-4" onSubmit={handleSubmit}>

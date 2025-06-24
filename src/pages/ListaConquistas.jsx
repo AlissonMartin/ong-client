@@ -36,7 +36,6 @@ function ConquistaCard({ conquista }) {
 function ListaConquistas() {
     return (
         <div>
-            <HeaderLog />
             <div className="container mt-5">
 
                 <h2 className="mb-4">Minhas Conquistas</h2>

@@ -8,7 +8,6 @@ function Cadastro() {
 
   return (
     <div className="bg-light min-vh-100">
-      <Header />
       <div className="d-flex justify-content-center align-items-center mt-5">
         <div className="bg-white shadow p-4 rounded" style={{ width: "500px" }}>
           <h2 className="h4 fw-semibold text-center text-dark mb-4">Cadastro</h2>

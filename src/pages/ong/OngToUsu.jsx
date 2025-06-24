@@ -9,7 +9,6 @@ function OngToUsu() {
 
     return (
         <div>
-            <HeaderLog />
             <div className="container pt-5">
                 <div className="row align-items-center">
                     <div className="col-4">

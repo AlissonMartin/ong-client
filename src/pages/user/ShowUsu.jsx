@@ -9,7 +9,6 @@ function ShowUsu() {
   }
   return (
     <div>
-      <HeaderLog />
       <div className="d-flex justify-content-center m-4">
         <div className="bg-white rounded shadow p-4 w-100" style={{ maxWidth: "600px" }}>
           <div className="d-flex flex-column align-items-center">

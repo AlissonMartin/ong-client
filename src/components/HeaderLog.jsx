@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import logo from "../img/logo.png";
 import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.css';
+import { doLogout } from "../helpers/AuthHandler";
 
 function HeaderLog() {
     const navigate = useNavigate();
@@ -11,6 +12,11 @@ function HeaderLog() {
     }
     function listaConquistas() {
         navigate('/listaConquistas');
+    }
+
+    const logout = ()=> {
+        doLogout()
+        navigate("/")
     }
 
     return (
@@ -24,9 +30,11 @@ function HeaderLog() {
                     style={{ width: "90px", height: "60px", cursor: "pointer" }}
                 />
             </div>
-
-            <div className="text-white fw-semibold me-3">
-
+            <div className="d-flex align-items-center">
+                <Link to="/" className="text-white text-decoration-none mx-2">Início</Link>
+                <Link to="/ongs" className="text-white text-decoration-none mx-2">ONGs</Link>
+                <Link to="/projetos" className="text-white text-decoration-none mx-2">Projetos</Link>
+                <Link to="/doacoes" className="text-white text-decoration-none mx-2">Doações</Link>
             </div>
 
             <div>
@@ -37,10 +45,11 @@ function HeaderLog() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Usuário</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Configuração</Dropdown.Item>
-                        <Dropdown.Item onClick={listaConquistas}>Coquistas</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Sair</Dropdown.Item>
+                        <Dropdown.Item as={Link} to="/showUsu">Usuário</Dropdown.Item>
+                        <Dropdown.Item as={Link} to="/editUsu">Configuração</Dropdown.Item>
+                        <Dropdown.Item onClick={listaConquistas}>Conquistas</Dropdown.Item>
+                        <Dropdown.Item as={Link} to="/ongToUsu">ONGs que sigo</Dropdown.Item>
+                        <Dropdown.Item onClick={logout}>Sair</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </div>

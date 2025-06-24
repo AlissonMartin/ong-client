@@ -3,7 +3,6 @@ import HeaderLog from "../../components/HeaderLog";
 function EditUsu() {
   return (
     <div>
-      <HeaderLog />
       <div className="mt-5">
         <div className="container">
           <div className="mx-auto bg-white p-4 rounded shadow" style={{ maxWidth: "600px" }}>

@@ -3,7 +3,6 @@ import Header from "../components/Header.jsx";
 function Sobre() {
   return (
     <div>
-      <Header />
       <div className="container my-5 px-3">
         <div className="mx-auto bg-white shadow rounded overflow-hidden" style={{ maxWidth: "960px" }}>
           <div className="bg-success text-white text-center py-4">
