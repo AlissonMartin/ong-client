@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.custom-ong-tabs .nav-link.active {
+background-color: #198754 !important;
+color: #fff !important;
+border-color: #198754 #198754 #fff !important;
+}
+.custom-ong-tabs .nav-link {
+color: #198754 !important;
+font-weight: 600;
+}

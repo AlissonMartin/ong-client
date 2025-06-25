@@ -22,6 +22,9 @@ const api = {
   listInstitutions: (search = "", page = 0, size = 10) => fetch(`${URL}/public/institutions/?search=${search}&page=${page}&size=${size}`),
   getInstitution: (id) => fetch(`${URL}/public/institutions/${id}`),
   listJobs: (search = "", page = 0, size = 10) => fetch(`${URL}/public/jobs?search=${search}&page=${page}&size=${size}`),
+  listPostsByInstitution: (institutionId) => fetch(`${URL}/public/institutions/${institutionId}/posts`),
+  getPost: (id) => fetch(`${URL}/public/posts/${id}`),
+  listJobsByInstitution: (institutionId) => fetch(`${URL}/public/institutions/${institutionId}/jobs`),
   getJob: (id, token) => fetch(`${URL}/public/jobs/${id}`, {
     headers: { Authorization: `Bearer ${token || getToken()}` }
   }),
@@ -31,6 +34,10 @@ const api = {
     method: "PUT",
     headers: { Authorization: `Bearer ${token || getToken()}` },
     body: formData
+  }),
+  showUser: (token) => fetch(`${URL}/user/users/show`, {
+    method: "GET",
+    headers: { Authorization: `Bearer ${token || getToken()}` },
   }),
   createJobApplication: (jobId, formData, token) => fetch(`${URL}/user/jobs/${jobId}/job_application`, {
     method: "POST",

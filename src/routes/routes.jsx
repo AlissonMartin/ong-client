@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 import Sobre from "../pages/Sobre";
 import Login from "../pages/Login";
 import Cadastro from "../pages/Cadastro";
-import OngPage from "../pages/OngPage";
+import OngList from "../pages/OngList";
 import EditUsu from "../pages/user/EditUsu";
 import ShowUsu from "../pages/user/ShowUsu";
 import EditOng from "../pages/ong/EditOng";
@@ -32,7 +32,7 @@ const MainRoutes = () => {
             <Route path="/showUsu" element={<ShowUsu />} />
             <Route path="/editOng" element={<EditOng />} />
             <Route path="/showOng" element={<ShowOng />} />
-            <Route path="/ongPage" element={<OngPage />} />
+            <Route path="/OngList" element={<OngList />} />
             <Route path="/listaConquistas" element={<ListaConquistas />} />
             <Route path="/ongToUsu" element={<OngToUsu />} />
         </Routes>

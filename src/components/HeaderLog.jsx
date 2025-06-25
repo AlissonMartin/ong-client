@@ -31,8 +31,7 @@ function HeaderLog() {
                 />
             </div>
             <div className="d-flex align-items-center">
-                <Link to="/" className="text-white text-decoration-none mx-2">Início</Link>
-                <Link to="/ongs" className="text-white text-decoration-none mx-2">ONGs</Link>
+                <Link to="/OngList" className="text-white text-decoration-none mx-2">ONGs</Link>
                 <Link to="/projetos" className="text-white text-decoration-none mx-2">Projetos</Link>
                 <Link to="/doacoes" className="text-white text-decoration-none mx-2">Doações</Link>
             </div>
