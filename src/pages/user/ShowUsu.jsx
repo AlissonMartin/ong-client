@@ -2,6 +2,11 @@ import HeaderLog from "../../components/HeaderLog";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+import FULL_PROFILE from "../../img/FULL_PROFILE.png";
+import FIRSTAPPLY from "../../img/FIRSTAPPLY.png";
+import FIRSTCHOSENAPPLY from "../../img/FIRSTCHOSENAPPLY.png";
 
 function ShowUsu() {
   const navigate = useNavigate();
@@ -21,7 +26,7 @@ function ShowUsu() {
   }, []);
 
   function editUsu() {
-    navigate('/editUsu');
+    navigate('/users/edit');
   }
   return (
     <div>
@@ -52,14 +57,29 @@ function ShowUsu() {
             {user && user.userAchievements && user.userAchievements.length > 0 && (
               <div className="w-100 mt-4">
                 <h5 className="fw-bold text-success mb-2">Conquistas</h5>
-                <ul className="list-group">
+                <div className="d-flex flex-wrap gap-3">
                   {user.userAchievements.map((ach, idx) => (
-                    <li key={idx} className="list-group-item d-flex justify-content-between align-items-center">
-                      <span>{ach.name || ach.title || "Conquista"}</span>
-                      {ach.date && <span className="badge bg-success">{ach.date}</span>}
-                    </li>
+                    <OverlayTrigger
+                      key={idx}
+                      placement="top"
+                      overlay={
+                        <Popover id={`popover-achievement-${idx}`}>
+                          <Popover.Header as="h3">{ach.name || ach.title || "Conquista"}</Popover.Header>
+                          <Popover.Body>
+                            {ach.description || "Sem descrição."}
+                            {ach.date && <div className="mt-2 text-muted small">Data: {ach.date}</div>}
+                          </Popover.Body>
+                        </Popover>
+                      }
+                    >
+                      <img
+                        src={ach.criteria == "FULL_PROFILE" ? FULL_PROFILE : ach.criteria == "FIRSTAPPLY" ? FIRSTAPPLY : ach.criteria == "FIRSTCHOSENAPPLY" ? FIRSTCHOSENAPPLY : ""}
+                        alt={ach.name || ach.title || "Conquista"}
+                        style={{ width: 64, height: 64, objectFit: 'contain', borderRadius: 8, border: '2px solid #198754', background: '#fff', cursor: 'pointer' }}
+                      />
+                    </OverlayTrigger>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
 

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import HeaderLog from "../../components/HeaderLog";
 
 function EditUsu() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -24,7 +26,7 @@ function EditUsu() {
           email: data.email || "",
           password: "",
           bio: data.bio || "",
-          profilePicture: null
+          photo: null
         });
         setPhotoUrl(data.photoUrl);
       } catch (err) {
@@ -37,7 +39,7 @@ function EditUsu() {
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "profilePicture") {
-      setForm({ ...form, profilePicture: files[0] });
+      setForm({ ...form, photo: files[0] });
       setPhotoUrl(URL.createObjectURL(files[0]));
     } else {
       setForm({ ...form, [name]: value });
@@ -54,10 +56,11 @@ function EditUsu() {
       formData.append("email", form.email);
       if (form.password) formData.append("password", form.password);
       if (form.bio) formData.append("bio", form.bio);
-      if (form.profilePicture) formData.append("profilePicture", form.profilePicture);
+      if (form.photo) formData.append("photo", form.photo);
       const response = await api.updateUser(formData);
       if (response.ok) {
         setSuccess("Perfil atualizado com sucesso!");
+        navigate('/users/show');
       } else {
         const data = await response.json();
         setError(data.message || "Erro ao atualizar perfil.");
@@ -65,6 +68,11 @@ function EditUsu() {
     } catch (err) {
       setError("Erro ao atualizar perfil.");
     }
+  };
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    window.location.href = '/users/show';
   };
 
   return (
@@ -131,7 +139,7 @@ function EditUsu() {
               {error && <div className="alert alert-danger">{error}</div>}
               {success && <div className="alert alert-success">{success}</div>}
               <div className="d-flex justify-content-end gap-2 mt-3">
-                <button type="reset" className="btn btn-secondary">Cancelar</button>
+                <button type="reset" className="btn btn-secondary" onClick={handleCancel}>Cancelar</button>
                 <button type="submit" className="btn btn-success">Editar</button>
               </div>
             </form>
