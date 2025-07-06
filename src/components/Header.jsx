@@ -1,11 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../img/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUserPlus,
+  faSignInAlt,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const navigate = useNavigate();
 
   function sobreNos() {
-    navigate("/sobre");
+    navigate("/about");
   }
   function home() {
     navigate("/");
@@ -14,7 +20,7 @@ function Header() {
     navigate("/login");
   }
   function cadastro() {
-    navigate("/cadastro");
+    navigate("/register");
   }
 
   return (
@@ -29,23 +35,14 @@ function Header() {
         />
       </div>
       <div className="d-flex">
-        <button
-          onClick={cadastro}
-          className="btn btn-outline-light me-2"
-        >
-          Cadastrar
+        <button onClick={cadastro} className="btn btn-outline-light me-2">
+          <FontAwesomeIcon icon={faUserPlus} className="me-1" /> Cadastrar
         </button>
-        <button
-          onClick={login}
-          className="btn btn-outline-light me-2"
-        >
-          Login
+        <button onClick={login} className="btn btn-outline-light me-2">
+          <FontAwesomeIcon icon={faSignInAlt} className="me-1" /> Login
         </button>
-        <button
-          onClick={sobreNos}
-          className="btn btn-outline-light"
-        >
-          Sobre a gente
+        <button onClick={sobreNos} className="btn btn-outline-light">
+          <FontAwesomeIcon icon={faInfoCircle} className="me-1" /> Sobre a gente
         </button>
       </div>
     </div>

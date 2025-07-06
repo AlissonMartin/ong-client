@@ -1,14 +1,15 @@
 import { useState } from "react";
-import Header from "../components/Header.jsx";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api.js";
 
 function Login() {
-  const [isUser, setIsUser] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     setError("");
     try {
@@ -16,7 +17,7 @@ function Login() {
       const data = await res.json();
       if (res.ok && data.token) {
         window.sessionStorage.setItem("token", data.token);
-        // Redirect or update UI as needed
+        navigate("/");
       } else {
         setError(data.message || "Falha no login");
       }
