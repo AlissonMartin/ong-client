@@ -98,9 +98,13 @@ const api = {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token || getToken()}`,
-      "Content-Type": "application/json"
+      // Não definir Content-Type para permitir envio de FormData
     },
-    body: JSON.stringify(body)
+    body
+  }),
+  completeJob: (id, token) => fetch(`${URL}/institution/jobs/${id}/complete`, {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${token || getToken()}` },
   }),
   deleteJob: (id, token) => fetch(`${URL}/institution/jobs/${id}`, {
     method: "DELETE",
@@ -110,10 +114,40 @@ const api = {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token || getToken()}`,
-      "Content-Type": "application/json"
     },
-    body: JSON.stringify(body)
-  })
+    body
+  }),
+  editPost: (id, body, token) => fetch(`${URL}/institution/posts/${id}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token || getToken()}`,
+    },
+    body
+  }),
+  editInstitution: (formData, token) => fetch(`${URL}/institution`, {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${token || getToken()}` },
+    body: formData
+  }),
+  deletePost: (id, token) => fetch(`${URL}/institution/posts/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token || getToken()}`,
+    }
+  }),
+  getJobDetails: (id, token) => fetch(`${URL}/institution/jobs/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token || getToken()}`,
+    }
+  }),
+  rejectJobApplication: (id, token) => fetch(`${URL}/institution/job_applications/${id}/reject`, {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${token || getToken()}` }
+  }),
+  chooseJobApplication: (id, token) => fetch(`${URL}/institution/job_applications/${id}/choose`, {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${token || getToken()}` }
+  }),
 };
 
 export default api;
